@@ -2,14 +2,16 @@
 <html>
 <head>
   <title>PuppyLove</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
 </head>
 <body>
 	<div id="overlay">
   </div>
   <%= render 'partials/nav_bar' %>
   <%= yield %>
+  {{ 3+3 }}
 </body>
 </html>

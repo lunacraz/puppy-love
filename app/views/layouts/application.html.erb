@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="puppyCards">
 <head>
   <title>PuppyLove</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
-  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
+  <%= javascript_include_tag 'application'%>
+  <%= csrf_meta_tags %>
 </head>
 <body>
 	<div id="overlay">
   </div>
   <%= render 'partials/nav_bar' %>
   <%= yield %>
-  {{ 3+3 }}
 </body>
 </html>

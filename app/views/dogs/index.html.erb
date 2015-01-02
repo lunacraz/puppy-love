@@ -1,22 +1,19 @@
-<div class="dogs-index" ng-controller="PuppyCardCtrl">
-  <div id="search-form">
-    <p>Filter by the following:<p>  
-    <%= form_tag("/dogs/search", method: "get") do %>
-      <input type="text" placeholder="Gender" name="query[gender]">
-      <input type="text" placeholder="Breed" name="query[breed]">
-      <input type="text" placeholder="Size" name="query[size]">
-      <input type="text" placeholder="Location" name="query[location]">
-      <input type="submit" class="button bg-pink">
-    <% end %>
-   </div>
-
-  <div id="card-container">
-    <% @dogs.each do |dog| %>
-     <div class="profile-card">
-  	   <%= render partial: 'profilecard', locals: {dog: dog} %>
+<div class ="container" ng-app="puppyCards">
+  <div class="dogs-index" ng-controller="PuppyCardCtrl as puppyCards">
+    <div id="search-form">
+      <p>Filter by the following:</p>  
+      <%= form_tag("/dogs/search", method: "get") do %>
+        <input type="text" placeholder="Gender" name="query[gender]">
+        <input type="text" placeholder="Breed" name="query[breed]">
+        <input type="text" placeholder="Size" name="query[size]">
+        <input type="text" placeholder="Location" name="query[location]">
+        <input type="submit" class="button bg-pink">
+      <% end %>
      </div>
-    <% end %>
+    <div id="card-container" ng-repeat="card in puppyCards.cards">
+       <div class="profile-card">
+    	   {{card}}
+       </div>
+    </div>
   </div>
 </div>
-
-

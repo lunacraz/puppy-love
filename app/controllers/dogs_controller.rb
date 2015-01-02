@@ -3,6 +3,7 @@ class DogsController < ApplicationController
 
   def index
     @dogs = Dog.all
+    @dogs.to_json
   end
 
   def show

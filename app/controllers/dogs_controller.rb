@@ -3,7 +3,11 @@ class DogsController < ApplicationController
 
   def index
     @dogs = Dog.all
-    @dogs.to_json
+    if request.xhr?
+      render json: @dogs
+    else
+      @dogs
+    end
   end
 
   def show

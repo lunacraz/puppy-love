@@ -25,7 +25,6 @@ class DogsController < ApplicationController
     @owner.dogs << @dog
     session[:current_dog] = @dog.id
     redirect_to @dog
-
   end
 
   def edit
